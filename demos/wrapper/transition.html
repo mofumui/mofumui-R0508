@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MWTransition"],function(MFrame,MWTransition){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				var parent = new  MWTransition().setSize(100,100).setBackground("#ff0");
+				
+				parent.transition("width 1s ease ");
+				
+				parent.handleHover(function(){
+					parent.setWidth(300);
+				},function(){
+					parent.setWidth(100);
+				})
+				
+				//设置文本
+				frame.append(parent);
+				
+			});
+			
+		</script>
+	</body>
+</html>

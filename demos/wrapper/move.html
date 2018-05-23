@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MPanel","MWMove"],function(MFrame,MPanel,MWMove){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				//容器 
+				var container = new MPanel().setSize(300,300).setBackground("#0f0");
+				
+				//面板
+				var panel = new MPanel().setFullToParent().setBackground("#f00");
+				
+				//移动包装器
+				var move = new MWMove().setSize(100,100);
+				
+				//包装面板
+				move.append(panel);
+				
+				//添加到指定容器 //也可以把整个网页当成容器，也就是用frame.append也可以
+				container.append(move);
+				//设置文本
+				frame.append(container);
+				
+			});
+			
+		</script>
+	</body>
+</html>

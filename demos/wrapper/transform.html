@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MWTransform"],function(MFrame,MWTransform){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				var parent = new  MWTransform().setSize(100,100).setBackground("#ff0");
+				
+				//兼容IE8，则子级元素需要设置为Static。
+				var children = new  MWTransform().setSize(100,100).setBackground("#f00").setPositionModel("static");
+				
+				parent.rotate(50,20,20);
+				
+				parent.append(children);
+				
+				//设置文本
+				frame.append(parent);
+				
+			});
+			
+		</script>
+	</body>
+</html>

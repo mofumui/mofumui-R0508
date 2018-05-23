@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//MFrame 支持组件（MComponent） 的所有方法。事实上我们所有的显示组件都支持组件的所有方法。
+			
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MSubFrame"],function(MFrame,MSubFrame){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				//创建一个子框架，该框架是基于IFrame实现
+				var subFrame = new MSubFrame();
+				subFrame.setSize(800,300);
+				
+				//同域下，我们允许你在SubFrame 使用MofumUI组件。而不需要额外的JS文件。
+				subFrame.setSrc("content/helloworld.html",function(context){
+					
+					//context 是一个 MFrame实例，是子frame中的
+					context.setBackground("#f00");
+					
+					context.setContent("helloworld!");
+				});
+				
+				//设置文本
+				frame.setContent(subFrame);
+				
+			});
+			
+		</script>
+	</body>
+</html>

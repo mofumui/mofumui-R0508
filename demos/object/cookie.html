@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用 MOCookie cookie组件
+			mofum.imports(["MOCookie"],function(MOCookie){
+				
+				//实例方式
+				var cookie = new MOCookie();
+				//根据秒钟设置Cookie, 也可以用setCookieByMinute、setCookieByHour、setCookieByDay、方法
+				cookie.setCookieBySecond("test","1111",20);
+				
+				console.log(cookie.getCookie("test"));
+			
+				//静态方法
+				//根据秒钟设置Cookie, 也可以用minute、hour、day、方法
+				MOCookie.second("test2","1233456",20);
+				
+				console.log(MOCookie.get("test2"));
+			});
+			
+		</script>
+	</body>
+</html>

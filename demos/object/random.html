@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用MORandom 随机组件
+			mofum.imports(["MORandom"],function(MORandom){
+				
+				var random = new MORandom();
+				
+				//随机一个10 -20的数
+				console.log(random.randNum(10,20));
+				
+				//随机一个颜色
+				console.log(random.randColor());
+				
+				//随机一个16进制颜色
+				console.log(random.randHexColor());
+				
+				//随机3个不重复的16进制颜色，如果5次没查到随机数则返回结果
+				console.log(random.randNoRepeatColor(3,5));
+				
+				//随机4个不重复的数。范围区间1-5,如果6次没查到随机数则返回结果
+				console.log(random.randNoRepeatNum(1,5,4,6));
+				
+				console.log(JSON.stringify(random.randPointData(0,0,100,200)));
+				
+			});
+			
+		</script>
+	</body>
+</html>

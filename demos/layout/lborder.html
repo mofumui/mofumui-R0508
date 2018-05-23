@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用MLBorder边框布局组件
+			mofum.imports(["MFrame","MLBorder"],function(MFrame,MLBorder){
+				
+				//创建框架并设置为网页页面大小
+				var frame = new MFrame().setPositionSize();
+				
+				//创建一个边框布局
+				var border = new MLBorder();
+				
+				//设置中部背景为红色
+				border.getCenter().setBackground("#f00");
+				
+				//设置西部
+				border.getWest().setWidth(150).setBackground("#999");
+				
+				//设置东部
+				border.getEast().setWidth(150).setBackground("#ff0");
+				
+				//设置北部
+				border.getNorth().setHeight(100).setBackground("#0f0");
+				
+				//设置南部
+				border.getSourth().setHeight(100).setBackground("#00f");
+				
+				//将大小重置为正常大小（至关重要）
+				border.resize();
+				frame.append(border);
+			});
+			
+		</script>
+	</body>
+</html>

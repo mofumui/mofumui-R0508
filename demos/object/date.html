@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用 MODateFormat 日期格式化组件
+			mofum.imports(["MODateFormat"],function(MODateFormat){
+				
+				//实例方式
+				var df = new MODateFormat();
+				
+				//下一天
+				console.log(df.getNextDate("yyyy-MM-dd"));
+				
+				//根据制定日期偏移10天，这里是指往后推10天。输出格式为："yyyy-MM-dd HH:mm:ss"
+				console.log(df.getSOffsetDate("2017-01-01 13:10:12", 10, "yyyy-MM-dd HH:mm:ss"));
+			
+				//静态方法
+				console.log(MODateFormat.parse("2017-01-01 13:10:12") instanceof Date);
+				
+				console.log(MODateFormat.format(new Date(),"yyyy-MM-dd"));
+			});
+			
+		</script>
+	</body>
+</html>

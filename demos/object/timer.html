@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用MOTimer组件
+			mofum.imports(["MOTimer"],function(MOTimer){
+				
+				//创建一个定时器
+				var timer = new MOTimer();
+				
+				//设置任务
+				timer.setTask(function(){
+					console.log("hello world!");
+				});
+				
+				//启动任务
+				timer.start();
+			});
+			
+		</script>
+	</body>
+</html>

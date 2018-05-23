@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MPanel"],function(MFrame,MPanel){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				//创建一个宽300，高100，背景为红色的面板。
+				var panel = new MPanel().setSize(300,100).setBackground("#f00");
+				
+				//设置文本
+				frame.append(panel);
+				
+			});
+			
+		</script>
+	</body>
+</html>

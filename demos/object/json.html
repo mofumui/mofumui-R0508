@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用 MOJSONToolkit JSON格式化组件
+			mofum.imports(["MOJSONToolkit"],function(MJSON){
+				var str = "{\"test\":\"111\"}";
+				
+				//实例型
+				var toolkit = new MJSON();
+				//字符串转JSON
+				console.log(""+toolkit.parse(str).test);
+				
+				var obj = new Object();
+				obj.test = "1235678";
+				//JSON对象转字符串
+				console.log(toolkit.stringify(obj));
+				
+				//静态型
+				//字符串转JSON
+				console.log(MJSON.parse(str).test);
+				//JSON转字符串
+				console.log(MJSON.stringify(obj));
+			});
+			
+		</script>
+	</body>
+</html>

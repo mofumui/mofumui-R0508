@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用MORunable组件
+			mofum.imports(["MORunable","MOTimer"],function(MORunable,MOTimer){
+				
+				//创建一个线程
+				var runable = new MORunable();
+				
+				//设置执行线程的脚本
+				runable.setScriptSrc("../../demos/object/runable/js/worker.js");
+				
+				//启动线程
+				runable.start();
+				
+				//接收子线程的数据
+				runable.receive(function(e){
+					console.log(e.data)
+				});
+				
+				//向子线程发送数据MOTimer的构造函数字符串
+				runable.send(MOTimer + "");
+			});
+			
+		</script>
+	</body>
+</html>

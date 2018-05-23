@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MPWindow","MWMove"],function(MFrame,MPWindow,MWMove){
+				
+				//创建框架
+				var frame = new MFrame().setPositionSize();
+				
+				//创建窗口面板
+				var panel = new MPWindow().setFullToParent();
+				
+				//创建一个可移动包装器
+				var move = new MWMove().setSize(400,300);
+				
+				//将面板放到移动包装器中
+				move.append(panel);
+				
+				//设置标题栏高度（方法还在标准化中...）
+				panel.setTitleHeight(32);
+				
+				//获得面板设置背景未白色，透明度未0.8
+				panel.getTitle().setBackground("#fff").setOpaque(0.8)
+				
+				//获得面板设置背景未白色，透明度未0.8
+				panel.getContent().setBackground("#fff").setOpaque(0.3);
+				
+				//获得面板设置背景未白色，透明度未0.8
+				panel.getFooter().setBackground("#fff").setOpaque(0.8);
+				
+				//设置底部高度（方法还在标准化中...）
+				panel.setFooterHeight(32);
+				
+				//基于主界面宽度居中（还在标准化中）
+				move.frameCenter(frame);
+				
+				//设置文本
+				frame.append(move);
+				
+				//设置背景图片
+				frame.setBackgroundImage("img/bg.jpg")
+				
+				//设置样式
+				frame.setStyle("background-size","cover");
+				
+				
+			});
+			
+		</script>
+	</body>
+</html>

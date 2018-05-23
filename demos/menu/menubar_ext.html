@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MMenuBar","MLGrid"],function(MFrame,MMenuBar,MLGrid){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				//菜单栏
+				var menubar = new MMenuBar().setHeight(30).setBackground("#666").setFontColor("#fff").setFontSize(12);
+				
+				//一级菜单
+				var levelOneMenu = ["文件","测试","内容"];
+				menubar.addMenus(levelOneMenu);
+				
+				//批量设置菜单
+				menubar.setMenus(function(menu){
+					menu.setFontColor("#fff");
+					menu.setTextAlign("center");
+				});
+				//文件菜单禁用系统样式
+				var fileMenu = menubar.getMenu(0).setStyleSytemFlag(false);
+				
+				//获得菜单容器
+				var menuContainer = fileMenu.getMenuItemContainer();
+				
+				//设置大小
+				menuContainer.setSize(300,300).setBackground("#DDD");
+				
+				//创建格子布局
+				var grid = new MLGrid(3,3);
+				
+				//设置中间的格子为绿色
+				grid.put(1,1,1,1).setBackground("#0f0");
+				
+				//给菜单容器添加格子布局
+				menuContainer.append(grid);
+				
+				//三级菜单跟二级菜单类似
+				frame.append(menubar);
+				
+			});
+			
+		</script>
+	</body>
+</html>

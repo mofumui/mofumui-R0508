@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用MLGridr格子布局组件
+			mofum.imports(["MFrame","MLGrid"],function(MFrame,MLGrid){
+				
+				//创建框架并设置为网页页面大小
+				var frame = new MFrame().setPositionSize();
+				
+				//创建一个16 * 9的格子布局容器
+				var grid = new MLGrid(16,9);
+				
+				//加入一个宽2个格子，高2个格子的panel,并设置颜色为红色、
+				grid.put(0,0,2,2).setBackground("#f00");
+				
+				//加入一个宽偏移14个格子宽度。宽2格子，高2个格子的panel，并设置颜色为红色。
+				grid.put(14,0,2,2).setBackground("#f00");
+				
+				//加入一个宽偏移8个格子，高偏移3个格子，宽3个格子，高3个格子的panel,并设置颜色为红色。
+				grid.put(8,3,3,3).setBackground("#f00");
+				
+				frame.append(grid);
+				
+			});
+			
+		</script>
+	</body>
+</html>

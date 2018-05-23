@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//自定义组件位置
+			mofum.customConfig = {
+				"Helloworld":"../../js/custom/Helloword"
+			}
+			//设置JS路由 
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","Helloworld"],function(MFrame,Helloworld){
+				
+				//新建一个HelloWorld类的实例
+				var hello  = new Helloworld(); 
+				
+				hello.say();
+				
+				var frame = new MFrame();
+				
+				frame.setContent(hello.message);
+			});
+			
+		</script>
+	</body>
+</html>

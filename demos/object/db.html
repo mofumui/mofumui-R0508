@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用 MOCookie cookie组件
+			mofum.imports(["MODBToolkit"],function(MODBToolkit){
+				
+				var wrapper = new MODBToolkit.DBWrapper({"id":"001","age":0,"name":"张三"},"t_user");
+				
+				//输出表格语句
+				console.log(wrapper.getTableSql("id"));
+				
+				//输出插入语句
+				console.log(wrapper.getInsertSql());
+				
+				//输出删除语句
+				console.log(wrapper.getDeleteSql("id"));
+				
+				//输出更新语句
+				console.log(wrapper.getUpdateSql("id"));
+				
+				//数据库工具类
+				var dbUtils = new MODBToolkit();
+				
+				//创建/连接数据库
+				dbUtils.open("mofum","1.0","测试数据库",10 * 1024 * 1024,function(){
+					console.log("初次创建数据库成功！");
+				})
+				
+				//执行SQL
+				dbUtils.executeStatement(wrapper.getTableSql("id"));
+				
+				//执行SQL
+				dbUtils.executeStatement(wrapper.getInsertSql(),["001",0,"张三"]);
+				
+				
+				
+			});
+			
+		</script>
+	</body>
+</html>

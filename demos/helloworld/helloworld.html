@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//设置js的路由。
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame"],function(MFrame){
+				
+				//创建框架
+				var frame = new MFrame("#f00");
+				
+				//设置文本
+				frame.setContent("Hello World!");
+				
+			});
+			
+		</script>
+	</body>
+</html>

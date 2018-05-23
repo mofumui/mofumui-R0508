@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MWBox","MWScroll"],function(MFrame,MWBox,MWScroll){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				//可视宽度
+				var width = document.documentElement.clientWidth;
+				
+				//可视高度
+				var height = document.documentElement.clientHeight;
+				
+				//创建一个滚动条包装器
+				var scroll = new MWScroll().setSize(width,height).setScrollbarVisible(true);
+				
+				//创建一个宽900，高300，背景为黄色的盒子。
+				var box = new MWBox().setSize(width,height).setBackground("#ff0");
+				
+				//创建一个宽900，高300，背景为红色的盒子。
+				var box2 = new MWBox().setSize(width,height).setBackground("#f00");
+				
+				//返回顶部
+				box2.handle("click",function(){
+					scroll.setScrollPosition(0,0,1000);
+				});
+				
+				//设置文本
+				scroll.append(box);
+				
+				scroll.append(box2);
+				
+				frame.append(scroll);
+				
+			});
+			
+		</script>
+	</body>
+</html>

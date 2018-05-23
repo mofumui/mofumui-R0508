@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用MLLayer层布局组件
+			mofum.imports(["MFrame","MLLayer"],function(MFrame,MLLayer){
+				
+				//创建框架并设置为网页页面大小
+				var frame = new MFrame().setPositionSize();
+				
+				//创建一个层布局
+				var layer = new MLLayer();
+				
+				//放入一个面板，设置背景颜色为红色，颜色透明度为0.4
+				layer.put(0).setBackground("#f00").setOpaque(0.4);
+				
+				//放入一个面板，设置背景颜色为绿色，颜色透明度为0.2
+				layer.put(1).setBackground("#0f0").setOpaque(0.2);
+				
+				//把层布局加入到框架中
+				frame.append(layer);
+				
+				//最后的网页的显示效果并不是红色，也不是绿色，而是另一种颜色。这就层布局。
+				
+				//另外以上写法并不是我们推荐的。我们推荐的是你用put(1,面板)
+				
+			});
+			
+		</script>
+	</body>
+</html>
