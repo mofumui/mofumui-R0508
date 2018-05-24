@@ -188,6 +188,9 @@
 			"MLLayer":pathPrefix+"mofumui/ui/v1/layout/MLLayer",
 			"MLBorder":pathPrefix+"mofumui/ui/v1/layout/MLBorder",
 			"MLGrid":pathPrefix+"mofumui/ui/v1/layout/MLGrid",
+//			"ML3DContainer":pathPrefix+"mofumui/ui/v1/layout/ML3DContainer",
+			"MLFree":pathPrefix+"mofumui/ui/v1/layout/MLFree",
+			
 			
 			//包装器
 			"MWBox":pathPrefix+"mofumui/ui/v1/wrapper/MWBox",
@@ -199,6 +202,9 @@
 			//面板
 			"MPanel":pathPrefix+"mofumui/ui/v1/panel/MPanel",
 			"MPWindow":pathPrefix+"mofumui/ui/v1/panel/MPWindow",
+			
+			//社交
+			"MBarrage":pathPrefix+"mofumui/ui/v1/social/MBarrage",
 			
 			//菜单
 			"MMenuBar":pathPrefix+"mofumui/ui/v1/menu/MMenuBar",

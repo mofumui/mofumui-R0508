@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS 路由
+			mofum.setPrefix("../../")
+			
+			//使用MLFree 自由布局组件
+			mofum.imports(["MFrame","MLFree","MPanel"],function(MFrame,MLFree,MPanel){
+				
+				//创建框架并设置为网页页面大小
+				var frame = new MFrame().setPositionSize();
+				
+				//设置布局大小为父级组件大小
+				var free = new MLFree().setFullToParent();
+				
+				//创建一个Panel
+				var panel_one = new MPanel("#f00").setSize(100,100);
+				
+				//创建一个Panel
+				var panel_two = new MPanel("#ff0").setSize(100,100);
+				
+				//将PanelOne 放到 点（30,40）处,第一层
+				free.put(panel_one,30,40,1);
+				
+				//将PanelOne 放到 点（0,0）处,第二层
+				free.put(panel_two,0,0,2);
+				
+				frame.append(free);
+				
+			});
+			
+		</script>
+	</body>
+</html>

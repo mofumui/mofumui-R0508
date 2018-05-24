@@ -18,6 +18,11 @@ define(["MComponent","MPanel"], function(MComponent,MPanel) {
 				panels[index] = null;
 			}
 			
+			if(!panel){
+				panel = new MPanel();
+				panel.setFullToParent();
+			}
+			
 			//创建一个容器
 			var container = new MPanel();
 			container.setPositionModel("absolute");
@@ -25,8 +30,9 @@ define(["MComponent","MPanel"], function(MComponent,MPanel) {
 			container.setContent(panel);
 			container.setFullToParent();
 			
-			panels[index] = container;
-			this.append(panels[index]);
+			
+			panels[index] = panel;
+			this.append(container);
 			
 			return panels[index];
 		}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../mofumui/mofumui.js" ></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//设置JS路由
+			mofum.setPrefix("../../");
+			mofum.imports(["MFrame","MBarrage","MPanel"],function(MFrame,MBarrage,MPanel){
+				
+				//创建框架
+				var frame = new MFrame();
+				
+				//创建一个宽500，高400，背景为红色的弹幕组件。
+				var barrage = new MBarrage().setSize(500,400).setBackground("#ff0");
+				
+				//设置最慢速度
+				barrage.setMaxSpeed(8);
+				
+				//设置随机颜色
+				barrage.setColors(["red","black","blue","#f0f"]);
+				
+				//设置单位时间
+				barrage.setTimeUnit(10);
+				
+				//发送一条弹幕
+				barrage.sendBarrage(1111);
+				
+				//发送一条弹幕红色弹幕，从右边出来
+				barrage.sendBarrage(1111,"RIGHT","RED");
+				
+				//创建一个100，30的面板组件
+				var panel = new MPanel().setSize(100,30).setBackground("#f00");
+				//发送一条面板组件
+				barrage.sendBarrage(panel);
+				
+				//设置文本
+				frame.append(barrage);
+				
+			});
+			
+		</script>
+	</body>
+</html>
